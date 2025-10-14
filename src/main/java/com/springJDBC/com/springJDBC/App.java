@@ -29,7 +29,7 @@ public class App
              prod.setName("Apple MacBook M1");
              prod.setQuantity(500);
              int update = dao.update(prod);
-             System.out.println("Rows affected : " + update);
+             System.out.println("Rows updates : " + update);
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
