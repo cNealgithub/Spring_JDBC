@@ -24,6 +24,7 @@ public class App
 //    		System.out.println("updated rows : " + insert);
              
              //update part
+            //checking git
              Products prod = new Products();
              prod.setId(127);
              prod.setName("Apple MacBook M1");
