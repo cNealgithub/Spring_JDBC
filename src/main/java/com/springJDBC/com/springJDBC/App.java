@@ -27,13 +27,13 @@ public class App
             //checking git
 //             Products prod = new Products();
 //             prod.setId(127);
-//             prod.setName("Apple MacBook M1");
+//             prod.setName("Apple MacBook M2");
 //             prod.setQuantity(500);
 //             int update = dao.update(prod);
 //             System.out.println("Rows updates : " + update);
 
             Products prod = new Products();
-            prod.setId(126);
+            prod.setId(125);
             System.out.println("deleting " + prod .getId());
             int update = dao.delete(prod);
             System.out.println(update + " Row deleted");

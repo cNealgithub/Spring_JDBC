@@ -23,7 +23,7 @@ public class ProductsDaoImpl implements ProductsDao{
 
     @Override
     public int delete(Products products) {
-        String query = "delete fro products where id=?";
+        String query = "delete from products where id=?";
         int update = template.update(query, products.getId());
         return update;
     }
