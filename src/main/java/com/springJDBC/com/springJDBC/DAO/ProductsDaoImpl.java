@@ -20,8 +20,15 @@ public class ProductsDaoImpl implements ProductsDao{
 		int update = template.update(query, products.getName(), products.getQuantity(), products.getId());
 		return update;
 	}
-	
-	public JdbcTemplate getTemplate() {
+
+    @Override
+    public int delete(Products products) {
+        String query = "delete fro products where id=?";
+        int update = template.update(query, products.getId());
+        return update;
+    }
+
+    public JdbcTemplate getTemplate() {
 		return template;
 	}
 
