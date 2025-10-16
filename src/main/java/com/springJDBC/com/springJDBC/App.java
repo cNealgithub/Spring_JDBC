@@ -7,6 +7,10 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.springJDBC.com.springJDBC.DAO.ProductsDao;
 import com.springJDBC.com.springJDBC.entities.Products;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
 public class App 
 {
     public static void main( String[] args )
@@ -33,7 +37,10 @@ public class App
 //             System.out.println("Rows updates : " + update);
 
             Products prod = new Products();
-            prod.setId(125);
+            System.out.print("enter the id you want to delete : ");
+            Scanner dc = new Scanner(System.in);
+            int delId = dc.nextInt();
+            prod.setId(delId);
             System.out.println("deleting " + prod .getId());
             int update = dao.delete(prod);
             System.out.println(update + " Row deleted");
