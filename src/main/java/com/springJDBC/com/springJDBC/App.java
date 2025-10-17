@@ -20,6 +20,8 @@ public class App
             System.out.println( "program started...." );
             ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
              ProductsDao dao = context.getBean("productsDao", ProductsDao.class);
+
+             //insert method
 //    		Products prod = new Products();
 //    		prod.setId(128);
 //    		prod.setName("Boat stone 350");
@@ -36,14 +38,20 @@ public class App
 //             int update = dao.update(prod);
 //             System.out.println("Rows updates : " + update);
 
-            Products prod = new Products();
-            System.out.print("enter the id you want to delete : ");
-            Scanner dc = new Scanner(System.in);
-            int delId = dc.nextInt();
-            prod.setId(delId);
-            System.out.println("deleting " + prod .getId());
-            int update = dao.delete(prod);
-            System.out.println(update + " Row deleted");
+            //delete method
+//            Products prod = new Products();
+//            System.out.print("enter the id you want to delete : ");
+//            Scanner dc = new Scanner(System.in);
+//            int delId = dc.nextInt();
+//            prod.setId(delId);
+//            System.out.println("deleting " + prod .getId());
+//            int update = dao.delete(prod);
+//            System.out.println(update + " Row deleted");
+
+            //select single object
+            Products prod = dao.selectobj(128);
+            System.out.println(prod);
+
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

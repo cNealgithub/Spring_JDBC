@@ -7,4 +7,5 @@ public interface ProductsDao {
 	public int insert(Products products);
 	public int update(Products products);
     public int delete(Products products);
+    public Products selectobj(int product_id);
 }
