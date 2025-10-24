@@ -1,12 +1,17 @@
 package com.springJDBC.com.springJDBC.DAO;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.springJDBC.com.springJDBC.entities.Products;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 public class ProductsDaoImpl implements ProductsDao{
 	
+
 	private JdbcTemplate template;
 
 	@Override
@@ -36,14 +41,22 @@ public class ProductsDaoImpl implements ProductsDao{
         Products products = template.queryForObject(query,rowMapper, product_id);
         return products;
     }
+    @Override
+	public List<Products> getAllProucts() {
+		// selecting all the products in database
+    	String query = "select * from products";
+    	List<Products> allProds = template.query(query, new RowMapperImpl());
+		return allProds;
+	}
 
     public JdbcTemplate getTemplate() {
 		return template;
 	}
 
+
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
 	}
-
+	
 	
 }

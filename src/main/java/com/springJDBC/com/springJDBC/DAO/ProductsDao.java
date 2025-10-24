@@ -1,5 +1,7 @@
 package com.springJDBC.com.springJDBC.DAO;
 
+import java.util.List;
+
 import com.springJDBC.com.springJDBC.entities.Products;
 
 public interface ProductsDao {
@@ -8,4 +10,5 @@ public interface ProductsDao {
 	public int update(Products products);
     public int delete(Products products);
     public Products selectobj(int product_id);
+    public List<Products> getAllProucts();
 }
